@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+  int datos, numeros, suma = 0, contador;
+  printf("¿Cuantos datos desea ingresar?\n");
+  scanf("%d", &datos);
+
+  for (contador = 0; contador < datos; contador++) {
+    printf("Ingrese un numero:");
+    scanf("%d", &numeros);
+    suma += numeros;
+  }
+
+  printf("El resultado es: %d", suma);
+  return 0;
+}
