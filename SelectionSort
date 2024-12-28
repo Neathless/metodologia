@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+void printArray(int arr[], int tamanio){
+    for(int i = 0; i < tamanio; i++){
+        printf("vector [%d] = %d\n", i, arr[i]);
+    }
+}
+
+void bubbleSort(int arr[], int tamanio){
+    int temp;
+    for(int j = 0; j < tamanio-1; j++){
+        for(int i = 0; i < tamanio-j-1; i++){
+            if(arr[i] > arr[i+1]){
+                temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+            printf("---------------------------\n");
+            printArray(arr, tamanio);
+        }
+    }
+}
+void insertionSort (int arr [], int tamanio) {
+    int key, j;
+    for (int i = 1; i < tamanio; ++i) {
+        key = arr[i];
+        j = i-1;
+        while (j >= 0 && arr [j] > key) {
+            arr[j+1]= arr [j];
+            j--;
+        }
+        arr [j+1] = key;
+        printArray(arr, tamanio);
+
+    }
+}
+int main(){
+
+    int numeros[] = {23,1,10,5, 2};
+    int tamanio = sizeof(numeros) / sizeof(int);
+
+    printf("Array antes de ordenar: \n");
+    printArray(numeros, tamanio);
+    printf("---------------------------\n");
+
+    printf("Array ordenado: \n");
+    bubbleSort(numeros, tamanio);
+    printf("---------------------------");
+    return 0;
+}
