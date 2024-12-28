@@ -1,0 +1,21 @@
+//Algoritmo #2
+#include <stdio.h>
+
+int main(void) {
+  float precio, descuento, precioF;
+  descuento = 0.1;
+  printf("¿Cual es el precio del producto?\n");
+  scanf ("%f", &precio);
+  precioF = precio - (precio * descuento);
+
+  if (precio <=0){
+    printf ("Ingrese una cantidad valida por favor.");
+  }
+  else if (precio >100){
+    printf ("Al aplicar el descuento, el precio final es de: $%.2f", precioF);
+  }
+  else {
+    printf ("Lo sentimos, no se puede aplicar el descuento. El precio final es de: $%.2f",precio);
+  }
+  return 0;
+}
