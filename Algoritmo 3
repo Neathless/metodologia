@@ -1,0 +1,13 @@
+//ALgoritmo #3
+#include <stdio.h>
+
+int main(void) {
+  int temperatura, farenheit, kelvin;
+  printf("Ingresa la temperatura en celsius:\n");
+  scanf ("%d", &temperatura);
+  farenheit = (temperatura * 9/5) + 32;
+  kelvin = temperatura + 273.15;
+  printf ("La temperatura en farenheit es: %d\n", farenheit);
+  printf ("La temperatura en kelvin es: %d\n", kelvin);
+  return 0;
+}
