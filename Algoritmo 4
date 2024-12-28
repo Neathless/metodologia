@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char nombre[30];
+  char estudiando[2];
+  int edad;
+
+  printf("¿Cuál es tu nombre?\n");
+  fgets(nombre, 30, stdin);
+
+  printf("¿Cuál es tu edad?\n");
+  scanf("%d", &edad);
+
+  printf("¿Eres estudiante?\n");
+  scanf("%s", estudiando);
+
+  if (strcmp(estudiando, "S1") == 0 || strcmp(estudiando, "si") == 0) {
+    printf("Hola %s, al ser estudiante tienes un descuento especial.\n", nombre);
+  } else if (strcmp(estudiando, "No") == 0 || strcmp(estudiando, "no") == 0) {
+    printf("%s, lo sentimos al no ser estudiante no eres apto para obtener el descuento.\n", nombre);
+  } else {
+    printf("Error: La respuesta ingresada no es válida. Ingrese 'S1' o 'No'.\n");
+  }
+
+  return 0;
+}
