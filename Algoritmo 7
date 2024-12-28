@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+  int numero, suma;
+  suma = 0;
+  do {
+    printf("Ingresa un numero entero:\n");
+     scanf ( "%d", &numero);
+    if (numero >0){
+      suma += numero;
+    }
+  }while (numero >= 0);
+
+    printf ("El resultado de la suma de todos los numeros es: %d", suma);
+  return 0;
+}
