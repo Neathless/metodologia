@@ -1,0 +1,75 @@
+
+#include <stdio.h>
+void calcularPromedio (int vector [], int tamanio){
+    float promedio;
+    int suma= 0;
+    for (int i = 0; i < tamanio; ++i) {
+        suma += vector [i];
+    }
+    promedio = suma /tamanio;
+    printf ("El promedio es %.2f\n", promedio);
+
+}
+void ordenarVector (int vector [], int tamanio){
+    int temp;
+    for (int i = 0; i < tamanio-1; ++i) {
+        for ( int j = 0; j < tamanio-i-1;j++){
+            if (vector [j] > vector [j+1]){
+                temp = vector [j];
+                vector [j] = vector [j+1];
+                vector [j+1] = temp;
+            }
+        }
+    }
+}
+void buscarElemento (int vector [], int tamanio, int numBuscado) {
+   int num = vector [0];
+    for (int i = 0; i < tamanio ; ++i) {
+        if (vector [i] > numBuscado){
+            num = vector [i];
+        }
+    }
+    printf ("El numero que buscas es : %d y se encuentra en el indice %d", numBuscado, num);
+
+}
+void mayorMenorPromedio (int vector [], int tamanio){
+    int promedio, suma= 0, mayorP = 0,  menorP = 0;
+    for (int i = 0; i < tamanio; ++i) {
+        suma += vector [i];
+    }
+    promedio = suma /tamanio;
+    for (int i = 0; i < tamanio ; ++i) {
+        if  (vector [i] >= promedio){
+            mayorP++;
+        }else {
+            menorP++;
+        }
+    }
+    printf (" %d numeros fueron mayores al promedio\n ", mayorP);
+    printf (" %d numeros fueron menores al promedio\n ", menorP);
+
+}
+int main(void) {
+   int numero;
+   printf ("¿Cuantos numeros ingresara?\n");
+    scanf ("%d", &numero);
+    int vector [numero];
+   for (int i = 1; i<= numero; i++){
+       printf ("ingresa el %d numero:\n", i);
+       scanf ("%d", &vector [i-1]);
+   }
+   calcularPromedio (vector, numero);
+
+   printf ("vector :\n");
+
+    ordenarVector (vector, numero);
+    for (int i = 0; i < numero; ++i) {
+        printf("%d\n", vector[i]);
+        }
+    mayorMenorPromedio (vector, numero);
+int numBuscado;
+    printf ("Ingresa el numero que deseas buscar:");
+    scanf ("%d", &numBuscado);
+buscarElemento (vector, numero, numBuscado);
+    return 0;
+}
